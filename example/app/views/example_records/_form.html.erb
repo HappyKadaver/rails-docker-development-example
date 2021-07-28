@@ -1,0 +1,22 @@
+<%= form_with(model: example_record) do |form| %>
+  <% if example_record.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(example_record.errors.count, "error") %> prohibited this example_record from being saved:</h2>
+
+      <ul>
+        <% example_record.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :foo %>
+    <%= form.text_field :foo %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
